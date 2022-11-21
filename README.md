@@ -12,7 +12,7 @@ When the fixed access code is followed by a "1" the lock will unlock. Ex: 847241
 
 When the fixed access code is followed by a "4" the lock will lock. Ex: 847244
 
-When the fixed access code is followed by any other digit the lock will not be affected. Ex: 847246, 847247, 847249
+When the fixed access code is followed by any other digit the lock will not be affected. Ex: 847246, 847247
   
 This code uses a simple FSM that is responsible for setting the state of the lock. There are only three possible states for the lock as mentioned above, locked, unlocked or no change. 
 
@@ -24,14 +24,21 @@ This program tests how easy or difficult it is for an intruder to unlock the loc
 
 ## How to run program ##
 
-You must have 'gradle' installed to complete this set-up.
+'gradle' is necessary to complete this set-up.
+
+Instructions are for a Linux Environment.
 
 1) Clone the repository:
 ```
 $ git clone https://github.com/cdefiesta/SecurityDevice.git
 ```
 
-2) Make sure all the unit tests pass:
+2) Change directory to the repository:
+```
+$ cd SecurityDevice
+```
+
+3) Make sure all the unit tests pass:
 ```
 $ ./gradlew test
 ```
@@ -40,14 +47,14 @@ If permission is denied to run gradlew tasks, enter:
 ```
 $ chmod u+x gradlew
 ```
-This should allow you to execute any gradlew task.
+Repeat Step 3 and you should be allowed to execute any gradlew task.
   
-3) Build an executable jar:
+4) Build an executable jar:
 ```
 $ ./gradlew jar
 ```
 
-4) Run the executable:
+5) Run the executable:
 ```
 $ java -jar ./app/build/libs/app.jar
 ```
@@ -55,12 +62,13 @@ Once the executable is ran you will get a choice to access either part one or tw
 
 Part two will output how many random numbers had to be generated to unlock the lock.
 
-To change parts, just run the executable jar again and restart the program.
+To change parts, exit the program by doing 'Ctrl + C'and run the executable jar again to restart the program.
 
-5) Generate unit-test coverage:
+6) Generate unit-test coverage:
 ```
 $ ./gradlew jacocoTestReport
 ```
+To access the HTML report, its at: ./app/build/jacoco/test/html/index.html
 
 ### Author ###
 
