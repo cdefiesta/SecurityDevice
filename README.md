@@ -70,4 +70,4 @@ Email: cdefiesta@hawk.iit.edu
 
 #### License ####
 
-GNU Public License
+[GNU Public License](https://www.gnu.org/licenses/gpl-3.0.html)
