@@ -35,30 +35,34 @@ public class App {
 		boolean unlocked = false;
 
 		while(!unlocked) {
-			int generateRandomNum = rand.nextInt(10);
-			count++; // everytime a number is generated count goes up
-			
 			if(!codeFound){
+				int generateRandomNum = rand.nextInt(10);
+				count++; // everytime a number is generated count goes up
 				if(generateRandomNum == code[i]){
 					if (i < code.length - 1){ i++; }
 
 					else if(i == code.length - 1){ codeFound = true; }
 				}
 				else{ i = 0; }
-			]
-			if(codeFound){
+			}
+			else if(codeFound){
 				int otherRandomNum = rand.nextInt(10);
 				count++;
 				fsm.input(otherRandomNum);
 				out = fsm.output();
+
 				if (out.equals("Unlock")) {
 					codeFound = false;
 					unlocked = true;
 					i = 0;
 				}
-				else{
-					codeFound = false; 
+				else if (otherRandomNum == code[0]){
 					i = 0;
+					codeFound = false; 
+				}
+				else {
+					i = 0;
+					codeFound = false; 
 				}
 			}
 		}
@@ -77,31 +81,38 @@ public class App {
 		boolean codeFound = false;
 
 		while (true) {
-			in = readInput(sc);
-			if(!codeFound){
+			if(!codeFound) {
+				in = readInput(sc);
 				if(in == code[i]){
 					if (i < code.length - 1){ i++; }
+
 					else if(i == code.length - 1){ codeFound = true; }
 				}
-				
+
 				else{ i = 0; }
 			}
-			else if(codeFound){
+
+			if(codeFound){
 				lockInput = readInput(sc);
 				fsm.input(lockInput);
 				out = fsm.output();
-				if (out.equals("Lock") || out.equals("Unlock")) {
+				if (lockInput == 1 || lockInput == 4) {
+					i = 0;
 					System.out.println(out);
 					codeFound = false;
-					i = 0;
 				}
-				else{
+				else if (lockInput == code[0]){
+					i = 0;
 					codeFound = false; 
-					i=0;
+				}
+				else {
+					i = 0;
+					codeFound = false; 
 				}
 			}
 		}
 	}
+	
 
 	public static void main(String[] args) {
 		App app = new App();
@@ -109,14 +120,14 @@ public class App {
 		System.out.println("Which part of the Project would you like to access? Part 1 or 2?");
 		System.out.println("Type 'one' for Part 1 and 'two' for Part 2.");
 
-		
+
 		String part = sc.next();
 		if(part.equals("one")) {
 			System.out.println("Enter code: ");
 			app.securityDevice();
 		}
 		else if(part.equals("two")) {
-			System.out.println("The intruder took " + app.intruderCheck() + " inputs to get to lock unlocked.");
+			System.out.println("The intruder took " + app.intruderCheck() + " inputs to get the lock unlocked.");
 		}
 
 	}
