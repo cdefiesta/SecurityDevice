@@ -43,6 +43,9 @@ public class App {
 
 					else if(i == code.length - 1){ codeFound = true; }
 				}
+				
+				else if(generateRandomNum == code[0]) { i = 1; }
+				
 				else{ i = 0; }
 			}
 			else if(codeFound){
@@ -59,6 +62,7 @@ public class App {
 				else if (otherRandomNum == code[0]){
 					i = 0;
 					codeFound = false; 
+					i++;
 				}
 				else {
 					i = 0;
@@ -89,6 +93,8 @@ public class App {
 					else if(i == code.length - 1){ codeFound = true; }
 				}
 
+				else if(in == code[0]) { i = 1; }
+				
 				else{ i = 0; }
 			}
 
@@ -104,6 +110,7 @@ public class App {
 				else if (lockInput == code[0]){
 					i = 0;
 					codeFound = false; 
+					i++;
 				}
 				else {
 					i = 0;
