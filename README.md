@@ -39,11 +39,11 @@ $ git clone https://github.com/cdefiesta/SecurityDevice.git
 $ ./gradlew test
 ```
   
-  2.5) If permission is denied to run gradlew tasks, enter:
-  ```
-  $ chmod u+x gradlew
-  ```
-  This should allow you to execute any gradlew task.
+If permission is denied to run gradlew tasks, enter:
+```
+$ chmod u+x gradlew
+```
+This should allow you to execute any gradlew task.
   
 3) Build an executable jar:
 ```
