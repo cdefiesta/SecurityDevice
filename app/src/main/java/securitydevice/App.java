@@ -37,14 +37,15 @@ public class App {
 		while(!unlocked) {
 			int generateRandomNum = rand.nextInt(10);
 			count++; // everytime a number is generated count goes up
+			
+			if(!codeFound){
+				if(generateRandomNum == code[i]){
+					if (i < code.length - 1){ i++; }
 
-			if(generateRandomNum == code[i]){
-				if (i < code.length - 1){ i++; }
-
-				else if(i == code.length - 1){ codeFound = true; }
-			}
-			else{ i = 0; }
-
+					else if(i == code.length - 1){ codeFound = true; }
+				}
+				else{ i = 0; }
+			]
 			if(codeFound){
 				int otherRandomNum = rand.nextInt(10);
 				count++;
@@ -57,7 +58,7 @@ public class App {
 				}
 				else{
 					codeFound = false; 
-					i=0;
+					i = 0;
 				}
 			}
 		}
@@ -77,13 +78,15 @@ public class App {
 
 		while (true) {
 			in = readInput(sc);
-			if(in == code[i]){
-				if (i < code.length - 1){ i++; }
-				else if(i == code.length - 1){ codeFound = true; }
+			if(!codeFound){
+				if(in == code[i]){
+					if (i < code.length - 1){ i++; }
+					else if(i == code.length - 1){ codeFound = true; }
+				}
+				
+				else{ i = 0; }
 			}
-			else{ i = 0; }
-
-			if(codeFound){
+			else if(codeFound){
 				lockInput = readInput(sc);
 				fsm.input(lockInput);
 				out = fsm.output();
