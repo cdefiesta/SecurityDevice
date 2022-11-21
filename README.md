@@ -8,14 +8,11 @@ This program is meant to emulate a real-life security lock that functions throug
 
 This program will take an integer from user input, one a time, and the state of the lock will only change if the full code is inputted with no interruption. The lock uses a fixed access code, the least 5 significant digits of my student ID ("84724"), and depending what number follows next will either lock, unlock or not change the state of the lock.
 
-When the fixed access code is followed by a "1" the lock will unlock.
-  ex: 847241
+When the fixed access code is followed by a "1" the lock will unlock. Ex: 847241
 
-When the fixed access code is followed by a "4" the lock will lock.
-  ex: 847244
+When the fixed access code is followed by a "4" the lock will lock. Ex: 847244
 
-When the fixed access code is followed by any other digit the lock will not be affected.
-  ex: 847246, 847247, 847249
+When the fixed access code is followed by any other digit the lock will not be affected. Ex: 847246, 847247, 847249
   
 This code uses a simple FSM that is responsible for setting the state of the lock. There are only three possible states for the lock as mentioned above, locked, unlocked or no change. 
 
@@ -54,4 +51,23 @@ $ ./gradlew jar
 ```
 $ java -jar ./app/build/libs/app.jar
 ```
-Once the executable is ran you will get a choice to access either part one or two of the program. For part one, you will have to input integers between '0' and '9', one at a time, and used the fixed access code to lock and unlock.
+Once the executable is ran you will get a choice to access either part one or two of the program. For part one, you will have to input integers between '0' and '9', one at a time, press enter/return to input another number, and use the fixed access code to print "lock" or "unlock". 
+
+Part two will output how many random numbers had to be generated to unlock the lock.
+
+To change parts, just run the executable jar again and restart the program.
+
+5) Generate unit-test coverage:
+```
+$ ./gradlew jacocoTestReport
+```
+
+### Author ###
+
+Charles de Fiesta
+
+Email: cdefiesta@hawk.iit.edu
+
+#### License ####
+
+GNU Public License
