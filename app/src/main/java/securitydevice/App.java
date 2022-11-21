@@ -55,6 +55,10 @@ public class App {
 					unlocked = true;
 					i = 0;
 				}
+				else{
+					codeFound = false; 
+					i=0;
+				}
 			}
 		}
 
@@ -87,6 +91,10 @@ public class App {
 					System.out.println(out);
 					codeFound = false;
 					i = 0;
+				}
+				else{
+					codeFound = false; 
+					i=0;
 				}
 			}
 		}
