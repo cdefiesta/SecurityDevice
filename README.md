@@ -4,7 +4,9 @@
 
 This program is meant to emulate a real-life security lock that functions through a number keypad with keys from '0' to '9'. 
 
-Part one of the program will take an integer from user input, one a time, and the state of the lock will only change if the full code is inputted with no interruption. The lock uses a fixed access code, the least 5 significant digits of my student ID ("84724"), and depending what number follows next will either lock, unlock or not change the state of the lock.
+### Part one ###
+
+This program will take an integer from user input, one a time, and the state of the lock will only change if the full code is inputted with no interruption. The lock uses a fixed access code, the least 5 significant digits of my student ID ("84724"), and depending what number follows next will either lock, unlock or not change the state of the lock.
 
 When the fixed access code is followed by a "1" the lock will unlock.
   ex: 847241
@@ -19,7 +21,9 @@ This code uses a simple FSM that is responsible for setting the state of the loc
 
 Any input longer than one digit, or is not an integer will be quietly ignored and the code will continue as normal.
 
-Part two of the program tests how easy or difficult it is for an intruder to unlock the lock without actually knowing the code. In this code, we are testing to see how efficient inputting in random numbers into the device using a random number generator.
+### Part two ###
+
+This program tests how easy or difficult it is for an intruder to unlock the lock without actually knowing the code. In this code, we are testing to see how efficient inputting in random numbers into the device using a random number generator.
 
 ### How to run program ###
 
