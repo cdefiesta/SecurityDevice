@@ -11,7 +11,7 @@ This program will take an integer from user input, one a time, and the state of 
 When the fixed access code is followed by a "1" the lock will unlock.
   ex: 847241
 
-When the fixed access code is followed by a "1" the lock will lock.
+When the fixed access code is followed by a "4" the lock will lock.
   ex: 847244
 
 When the fixed access code is followed by any other digit the lock will not be affected.
@@ -25,7 +25,7 @@ Any input longer than one digit, or is not an integer will be quietly ignored an
 
 This program tests how easy or difficult it is for an intruder to unlock the lock without actually knowing the code. In this code, we are testing to see how efficient inputting in random numbers into the device using a random number generator.
 
-### How to run program ###
+## How to run program ##
 
 You must have 'gradle' installed to complete this set-up.
 
