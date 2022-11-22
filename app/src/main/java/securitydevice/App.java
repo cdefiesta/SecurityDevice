@@ -134,7 +134,35 @@ public class App {
 			app.securityDevice();
 		}
 		else if(part.equals("two")) {
-			System.out.println("The intruder took " + app.intruderCheck() + " inputs to get the lock unlocked.");
+			System.out.println("The intruder took " + app.intruderCheck() + " tries to unlock the lock.");
+
+			System.out.println("Do you want to see statistics for this part? 'yes' or 'no'");
+			String ask = sc.next();
+			if(ask.equals("yes")) {
+				int max = 0;
+				int min = Integer.MAX_VALUE;
+				int total = 0;
+
+				System.out.println("How many trials do you want to run?");
+				int trials = sc.nextInt();
+
+				for(int i=0;i<trials;i++) {
+					int attempt = app.intruderCheck();
+					total += attempt;
+					if(attempt > max) {
+						max = attempt;
+					}
+					if (attempt < min) {
+						min = attempt;
+					}
+				}
+
+				System.out.println("In 100 tries, the maximum amount of tries that was attempted was " + max);
+				System.out.println("In 100 tries, the minimum amount of tries that was attempted was " + min);
+				System.out.println("In 100 tries, the average amount of tries that was attempted was " + total/trials);
+			}				
+
+			else if(ask.equals("no")) { System.exit(1); }
 		}
 
 	}
