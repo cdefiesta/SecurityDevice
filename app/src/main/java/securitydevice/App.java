@@ -157,9 +157,9 @@ public class App {
 					}
 				}
 
-				System.out.println("In 100 tries, the maximum amount of tries that was attempted was " + max);
-				System.out.println("In 100 tries, the minimum amount of tries that was attempted was " + min);
-				System.out.println("In 100 tries, the average amount of tries that was attempted was " + total/trials);
+				System.out.println("In " + trials + " tries, the maximum amount of tries that was attempted was " + max);
+				System.out.println("In " + trials + " tries, the minimum amount of tries that was attempted was " + min);
+				System.out.println("In " + trials + " tries, the average amount of tries that was attempted was " + total/trials);
 			}				
 
 			else if(ask.equals("no")) { System.exit(1); }
