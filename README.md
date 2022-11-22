@@ -16,6 +16,8 @@ When the fixed access code is followed by any other digit the lock will not be a
   
 This code uses a simple FSM that is responsible for setting the state of the lock. There are only three possible states for the lock as mentioned above, locked, unlocked or no change. 
 
+![State Transition Diagram](https://drive.google.com/file/d/1tWuJ_0u8EAwMAezQBAp4h-_cxOZZ9JQ8/view?usp=sharing)
+
 Any input longer than one digit, or is not an integer will be quietly ignored and the code will continue as normal.
 
 ### Part two ###
@@ -60,9 +62,9 @@ $ java -jar ./app/build/libs/app.jar
 ```
 Once the executable is ran you will get a choice to access either part one or two of the program. For part one, you will have to input integers between '0' and '9', one at a time, press enter/return to input another number, and use the fixed access code to print "lock" or "unlock". 
 
-Part two will output how many random numbers had to be generated to unlock the lock.
+Part two will output how many random numbers had to be generated to unlock the lock. If you would like to see some statistics continue with the code by typing 'yes' and the amount of trials you want the code to run. 
 
-To change parts, exit the program by doing 'Ctrl + C'and run the executable jar again to restart the program.
+To change parts, exit the program by doing 'Ctrl + C' and run the executable jar again to restart the program.
 
 6) Generate unit-test coverage:
 ```
