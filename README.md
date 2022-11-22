@@ -16,8 +16,6 @@ When the fixed access code is followed by any other digit the lock will not be a
   
 This code uses a simple FSM that is responsible for setting the state of the lock. There are only three possible states for the lock as mentioned above, locked, unlocked or no change. 
 
-![State Transition Diagram](https://lucid.app/lucidchart/c491fb4a-a1d0-4427-92e8-129eb78e0c9f/edit?viewport_loc=-748%2C-637%2C3181%2C1749%2C0_0&invitationId=inv_60d29ba4-4a7b-4989-8a01-2c60d6761321)
-
 Any input longer than one digit, or is not an integer will be quietly ignored and the code will continue as normal.
 
 ### Part two ###
