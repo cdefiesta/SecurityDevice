@@ -28,6 +28,8 @@ This program tests how easy or difficult it is for an intruder to unlock the loc
 
 Instructions are for a Linux Environment.
 
+#### Open Terminal and follow these instructions:
+
 1) Clone the repository:
 ```
 $ git clone https://github.com/cdefiesta/SecurityDevice.git
